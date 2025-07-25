@@ -71,17 +71,43 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+        }),
+      });
 
-    toast({
-      title: "Message Sent Successfully!",
-      description: "Thank you for reaching out. I'll get back to you within 24 hours.",
-      duration: 5000,
-    });
-
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
+      if (response.ok) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+          duration: 5000,
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error Sending Message",
+        description: "There was a problem sending your message. Please try again or contact me directly.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
