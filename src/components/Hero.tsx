@@ -77,7 +77,7 @@ const Hero = () => {
 
           {/* Right Content - Profile Image */}
           <div className="relative animate-fade-in-right" style={{ animationDelay: '0.3s' }}>
-            <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96">
+            <div className="relative mx-auto w-64 h-64 lg:w-80 lg:h-80">
               {/* Decorative circles */}
               <div className="absolute inset-0 bg-gradient-primary rounded-full opacity-20 animate-glow-pulse"></div>
               <div className="absolute inset-4 bg-gradient-card rounded-full shadow-card"></div>
