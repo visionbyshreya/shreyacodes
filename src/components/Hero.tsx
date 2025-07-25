@@ -86,7 +86,7 @@ const Hero = () => {
               <img
                 src={shreyaImage}
                 alt="Shreya Sharma - Full Stack Developer"
-                className="absolute inset-6 w-auto h-auto object-cover rounded-full shadow-hover"
+                className="absolute inset-6 w-full h-full object-cover rounded-full shadow-hover"
               />
               
               {/* Floating elements */}
