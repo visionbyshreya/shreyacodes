@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 import { 
   Mail, 
   Phone, 
@@ -72,31 +73,27 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          _replyto: formData.email,
-        }),
-      });
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Shreya',
+      };
 
-      if (response.ok) {
-        toast({
-          title: "Message Sent Successfully!",
-          description: "Thank you for reaching out. I'll get back to you within 24 hours.",
-          duration: 5000,
-        });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        throw new Error('Failed to send message');
-      }
+      await emailjs.send(
+        'service_i150oqh',
+        'template_jv59w9z',
+        templateParams,
+        'isans7yp_rd0cH6T3'
+      );
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+        duration: 5000,
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error('Error sending message:', error);
       toast({
