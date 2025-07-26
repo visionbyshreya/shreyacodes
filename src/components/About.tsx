@@ -4,10 +4,10 @@ import { Award, Users, Coffee, Star } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { icon: Award, label: "Projects Completed", value: "50+" },
-    { icon: Users, label: "Happy Clients", value: "30+" },
-    { icon: Coffee, label: "Cups of Coffee", value: "∞" },
-    { icon: Star, label: "Years Experience", value: "3+" },
+    { icon: Award, label: "Fast & Responsive", value: "⚡" },
+    { icon: Users, label: "Secure & Scalable", value: "🔒" },
+    { icon: Coffee, label: "Collaborative & Clear", value: "💬" },
+    { icon: Star, label: "Cups of Coffee", value: "∞" },
   ];
 
   const highlights = [
