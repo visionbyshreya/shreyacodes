@@ -24,41 +24,11 @@ const Hero = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const floatingElements = ['💻', '⚡', '🎨', '🌈', '🚀', '✨', '🔮', '💫'];
-
   return (
     <section id="home" className="min-h-screen relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-hero">
         <div className="absolute inset-0 bg-gradient-glow opacity-50"></div>
-        {/* Floating Elements */}
-        {floatingElements.map((emoji, index) => (
-          <motion.div
-            key={index}
-            className="absolute text-2xl"
-            initial={{ 
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-              opacity: 0.7
-            }}
-            animate={{
-              y: [0, -30, 0],
-              x: [0, Math.random() * 50 - 25, 0],
-              rotate: [0, 360, 0]
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2
-            }}
-            style={{
-              left: `${Math.random() * 90}%`,
-              top: `${Math.random() * 90}%`
-            }}
-          >
-            {emoji}
-          </motion.div>
-        ))}
       </div>
 
       <div className="relative z-10 container mx-auto px-4 h-screen flex items-center">

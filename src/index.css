@@ -17,17 +17,17 @@
     --popover: 260 50% 8%;
     --popover-foreground: 260 5% 95%;
 
-    --primary: 280 100% 70%;
+    --primary: 25 100% 60%;
     --primary-foreground: 260 100% 2%;
-    --primary-glow: 280 100% 80%;
+    --primary-glow: 35 100% 70%;
 
-    --secondary: 320 100% 65%;
+    --secondary: 15 100% 55%;
     --secondary-foreground: 260 100% 2%;
 
     --muted: 260 30% 15%;
     --muted-foreground: 260 5% 65%;
 
-    --accent: 180 100% 60%;
+    --accent: 200 100% 60%;
     --accent-foreground: 260 100% 2%;
 
     --destructive: 0 84% 60%;
@@ -40,17 +40,17 @@
     --radius: 1rem;
     
     /* Gen Z Vibrant Design System */
-    --gradient-primary: linear-gradient(135deg, hsl(280 100% 70%), hsl(320 100% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(260 100% 2%), hsl(280 50% 8%), hsl(320 30% 12%));
-    --gradient-card: linear-gradient(145deg, hsl(260 50% 8% / 0.9), hsl(280 30% 12% / 0.7));
-    --gradient-neon: linear-gradient(45deg, hsl(280 100% 70%), hsl(180 100% 60%), hsl(320 100% 65%));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(280 100% 70% / 0.3), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(25 100% 60%), hsl(15 100% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(260 100% 2%), hsl(25 50% 8%), hsl(35 30% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(260 50% 8% / 0.9), hsl(25 30% 12% / 0.7));
+    --gradient-neon: linear-gradient(45deg, hsl(25 100% 60%), hsl(200 100% 60%), hsl(15 100% 55%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(25 100% 60% / 0.3), transparent 70%);
     
     /* Neon shadows and effects */
-    --shadow-card: 0 8px 32px hsl(280 100% 70% / 0.1);
-    --shadow-glow: 0 0 40px hsl(280 100% 70% / 0.4);
-    --shadow-hover: 0 16px 64px hsl(280 100% 70% / 0.2);
-    --shadow-neon: 0 0 20px hsl(280 100% 70%), 0 0 40px hsl(280 100% 70%), 0 0 60px hsl(280 100% 70%);
+    --shadow-card: 0 8px 32px hsl(25 100% 60% / 0.1);
+    --shadow-glow: 0 0 40px hsl(25 100% 60% / 0.4);
+    --shadow-hover: 0 16px 64px hsl(25 100% 60% / 0.2);
+    --shadow-neon: 0 0 20px hsl(25 100% 60%), 0 0 40px hsl(25 100% 60%), 0 0 60px hsl(25 100% 60%);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -83,17 +83,17 @@
     --popover: 260 50% 8%;
     --popover-foreground: 260 5% 95%;
 
-    --primary: 280 100% 70%;
+    --primary: 25 100% 60%;
     --primary-foreground: 260 100% 2%;
-    --primary-glow: 280 100% 80%;
+    --primary-glow: 35 100% 70%;
 
-    --secondary: 320 100% 65%;
+    --secondary: 15 100% 55%;
     --secondary-foreground: 260 100% 2%;
 
     --muted: 260 30% 15%;
     --muted-foreground: 260 5% 65%;
 
-    --accent: 180 100% 60%;
+    --accent: 200 100% 60%;
     --accent-foreground: 260 100% 2%;
 
     --destructive: 0 84% 60%;
@@ -104,17 +104,17 @@
     --ring: 280 100% 70%;
     
     /* Dark mode maintains the same vibrant aesthetic */
-    --gradient-primary: linear-gradient(135deg, hsl(280 100% 70%), hsl(320 100% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(260 100% 2%), hsl(280 50% 8%), hsl(320 30% 12%));
-    --gradient-card: linear-gradient(145deg, hsl(260 50% 8% / 0.9), hsl(280 30% 12% / 0.7));
-    --gradient-neon: linear-gradient(45deg, hsl(280 100% 70%), hsl(180 100% 60%), hsl(320 100% 65%));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(280 100% 70% / 0.3), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(25 100% 60%), hsl(15 100% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(260 100% 2%), hsl(25 50% 8%), hsl(35 30% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(260 50% 8% / 0.9), hsl(25 30% 12% / 0.7));
+    --gradient-neon: linear-gradient(45deg, hsl(25 100% 60%), hsl(200 100% 60%), hsl(15 100% 55%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(25 100% 60% / 0.3), transparent 70%);
     
     /* Dark mode shadows */
-    --shadow-card: 0 8px 32px hsl(280 100% 70% / 0.1);
-    --shadow-glow: 0 0 40px hsl(280 100% 70% / 0.4);
-    --shadow-hover: 0 16px 64px hsl(280 100% 70% / 0.2);
-    --shadow-neon: 0 0 20px hsl(280 100% 70%), 0 0 40px hsl(280 100% 70%), 0 0 60px hsl(280 100% 70%);
+    --shadow-card: 0 8px 32px hsl(25 100% 60% / 0.1);
+    --shadow-glow: 0 0 40px hsl(25 100% 60% / 0.4);
+    --shadow-hover: 0 16px 64px hsl(25 100% 60% / 0.2);
+    --shadow-neon: 0 0 20px hsl(25 100% 60%), 0 0 40px hsl(25 100% 60%), 0 0 60px hsl(25 100% 60%);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
