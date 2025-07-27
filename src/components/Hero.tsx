@@ -1,114 +1,268 @@
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import shreyaImage from '@/assets/shreya-profile.jpg';
+import { Github, Linkedin, Mail, ChevronDown, Code, Sparkles, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
+import shreyaProfile from '@/assets/shreya-profile.jpg';
 
 const Hero = () => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const fullText = "Hi, I'm Shreya 👩‍💻 | I Code | I Create | I Slay 🚀";
+
+  useEffect(() => {
+    if (currentIndex < fullText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + fullText[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 100);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, fullText]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const floatingElements = ['💻', '⚡', '🎨', '🌈', '🚀', '✨', '🔮', '💫'];
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/2 w-96 h-96 bg-gradient-primary opacity-10 rounded-full blur-3xl animate-glow-pulse"></div>
-        <div className="absolute -bottom-1/2 -left-1/2 w-96 h-96 bg-primary-glow opacity-10 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: '1.5s' }}></div>
+    <section id="home" className="min-h-screen relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-hero">
+        <div className="absolute inset-0 bg-gradient-glow opacity-50"></div>
+        {/* Floating Elements */}
+        {floatingElements.map((emoji, index) => (
+          <motion.div
+            key={index}
+            className="absolute text-2xl"
+            initial={{ 
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+              opacity: 0.7
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, Math.random() * 50 - 25, 0],
+              rotate: [0, 360, 0]
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2
+            }}
+            style={{
+              left: `${Math.random() * 90}%`,
+              top: `${Math.random() * 90}%`
+            }}
+          >
+            {emoji}
+          </motion.div>
+        ))}
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 container mx-auto px-4 h-screen flex items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left Content */}
-          <div className="text-center lg:text-left animate-fade-in-up">
-            <div className="mb-6">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-                <span className="text-foreground">Hi! I Am</span>
-                <br />
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Shreya Sharma
-                </span>
-              </h1>
-              <p className="text-xl lg:text-2xl text-muted-foreground mb-2">
-                Full-Stack Web Developer
-              </p>
-              <p className="text-lg text-muted-foreground mb-8">
-                UI/UX Designer | SEO & Digital Marketing Specialist
-              </p>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                "Good design is silent. Great design speaks — and I help it speak clearly."
-              </p>
-            </div>
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Terminal Style Intro */}
+            <motion.div 
+              className="bg-card/50 backdrop-blur-xl border border-primary/20 rounded-2xl p-6 font-mono"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="text-muted-foreground ml-2">terminal</span>
+              </div>
+              <div className="space-y-2 text-sm">
+                <p className="text-muted-foreground">$ whoami</p>
+                <p className="text-primary">shreya@portfolio:~$ fresher_web_developer</p>
+                <p className="text-muted-foreground">$ echo "Hello World! 🌍"</p>
+                <div className="flex items-center">
+                  <span className="text-accent mr-2">&gt;</span>
+                  <span className="typing-animation font-space-grotesk text-gradient font-bold">
+                    {displayText}
+                  </span>
+                </div>
+              </div>
+            </motion.div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <Button 
-                variant="hero" 
-                size="lg"
-                onClick={() => scrollToSection('portfolio')}
-                className="animate-scale-in"
-                style={{ animationDelay: '0.2s' }}
+            {/* Main Heading */}
+            <motion.div 
+              className="space-y-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              <div className="space-y-2">
+                <motion.h1 
+                  className="text-4xl md:text-6xl lg:text-7xl font-bold font-space-grotesk"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span className="text-gradient">Fresher</span>
+                  <br />
+                  <span className="text-foreground">Web Developer</span>
+                </motion.h1>
+                <motion.div 
+                  className="flex items-center gap-3 text-xl md:text-2xl text-muted-foreground"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1 }}
+                >
+                  <Code className="text-primary" />
+                  <span>&lt;Building amazing experiences /&gt;</span>
+                  <Sparkles className="text-secondary" />
+                </motion.div>
+              </div>
+
+              <motion.p 
+                className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2 }}
               >
+                Ready to turn ideas into reality with modern web technologies. 
+                Let's create something <span className="text-gradient font-semibold">extraordinary</span> together! ✨
+              </motion.p>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4 }}
+            >
+              <Button 
+                size="lg" 
+                className="bg-gradient-primary hover:shadow-neon transition-all duration-300 transform hover:scale-105 font-semibold text-lg px-8 py-6"
+                onClick={() => scrollToSection('portfolio')}
+              >
+                <Zap className="mr-2 h-5 w-5" />
                 View My Work
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
+                className="border-primary/50 hover:bg-primary/10 hover:border-primary transition-all duration-300 font-semibold text-lg px-8 py-6 glass-card"
                 onClick={() => scrollToSection('contact')}
-                className="animate-scale-in"
-                style={{ animationDelay: '0.4s' }}
               >
-                <Mail className="w-5 h-5 mr-2" />
+                <Mail className="mr-2 h-5 w-5" />
                 Get In Touch
               </Button>
-            </div>
+            </motion.div>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              <Button variant="ghost" size="icon" className="hover:text-primary transition-colors">
-                <Github className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary transition-colors">
-                <Mail className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
+            <motion.div 
+              className="flex gap-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.6 }}
+            >
+              {[
+                { icon: Github, href: "#", label: "GitHub" },
+                { icon: Linkedin, href: "#", label: "LinkedIn" },
+                { icon: Mail, href: "#contact", label: "Email" }
+              ].map(({ icon: Icon, href, label }, index) => (
+                <motion.div key={label} whileHover={{ y: -5, scale: 1.1 }}>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="glass-card hover:shadow-glow transition-all duration-300"
+                    asChild
+                  >
+                    <a href={href} aria-label={label}>
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  </Button>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
 
           {/* Right Content - Profile Image */}
-          <div className="relative animate-fade-in-right" style={{ animationDelay: '0.3s' }}>
-            <div className="relative mx-auto w-64 h-64 lg:w-80 lg:h-80">
-              {/* Decorative circles */}
-              <div className="absolute inset-0 bg-gradient-primary rounded-full opacity-20 animate-glow-pulse"></div>
-              <div className="absolute inset-4 bg-gradient-card rounded-full shadow-card"></div>
-              
-              {/* Profile Image */}
-              <img
-                src={shreyaImage}
-                alt="Shreya Sharma - Full Stack Developer"
-                className="absolute inset-6 w-full h-full object-cover rounded-full shadow-hover"
+          <motion.div 
+            className="relative flex justify-center"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="relative">
+              {/* Decorative Elements */}
+              <motion.div 
+                className="absolute -inset-4 bg-gradient-primary rounded-full opacity-20 blur-xl"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div 
+                className="absolute -inset-2 bg-gradient-neon rounded-full opacity-30 blur-lg"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
               />
               
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-glow animate-bounce">
-                <span className="text-white font-bold">👋</span>
-              </div>
-            </div>
-          </div>
-        </div>
+              {/* Profile Image */}
+              <motion.div 
+                className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden glass-card p-2"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img 
+                  src={shreyaProfile} 
+                  alt="Shreya - Web Developer" 
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </motion.div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <Button 
-            variant="ghost" 
-            size="icon"
-            onClick={() => scrollToSection('about')}
-            className="rounded-full"
-          >
-            <ArrowDown className="w-6 h-6" />
-          </Button>
+              {/* Floating Badges */}
+              <motion.div 
+                className="absolute -top-4 -right-4 bg-gradient-primary text-primary-foreground px-4 py-2 rounded-full font-bold shadow-neon"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                🔥 Fresh
+              </motion.div>
+              <motion.div 
+                className="absolute -bottom-4 -left-4 bg-gradient-card text-foreground px-4 py-2 rounded-full font-bold shadow-glow"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+              >
+                ⚡ Ready
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2 }}
+      >
+        <Button
+          variant="ghost"
+          size="icon"
+          className="rounded-full glass-card hover:shadow-glow transition-all duration-300"
+          onClick={() => scrollToSection('about')}
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            <ChevronDown className="h-6 w-6" />
+          </motion.div>
+        </Button>
+      </motion.div>
     </section>
   );
 };
