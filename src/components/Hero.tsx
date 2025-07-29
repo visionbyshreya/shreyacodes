@@ -33,18 +33,18 @@ const Hero = () => {
                 className="text-5xl md:text-7xl lg:text-8xl font-light font-space-grotesk leading-tight"
                 whileHover={{ scale: 1.02 }}
               >
-                <span className="block text-foreground">LIFE IS A</span>
-                <span className="block text-foreground font-bold">PARTY</span>
+                <span className="block text-foreground">Hi, I'm</span>
+                <span className="block text-gradient font-bold">Shreya</span>
               </motion.h1>
               
               <motion.h2 
-                className="text-4xl md:text-5xl lg:text-6xl font-light text-muted-foreground"
+                className="text-3xl md:text-4xl lg:text-5xl font-light text-muted-foreground"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
               >
-                DO IT IN<br />
-                <span className="font-bold text-foreground">STYLE</span>
+                Web Developer &amp;<br />
+                <span className="font-medium text-primary">Creative Designer</span>
               </motion.h2>
             </motion.div>
 
@@ -119,14 +119,15 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <motion.div 
-              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden elegant-card hover-lift"
+              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden elegant-card hover-lift shadow-colored"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
+              <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-full"></div>
               <img 
                 src={shreyaProfile} 
                 alt="Shreya - Web Developer" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover relative z-10"
               />
             </motion.div>
           </motion.div>

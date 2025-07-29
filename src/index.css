@@ -8,46 +8,47 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 30 30% 85%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 9% 46%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 25 50% 80%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 9% 46%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 96%;
-    --ring: 0 0% 0%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
-    /* Minimalist Design System */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 20%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(30 30% 95%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 98%), hsl(30 20% 96%));
-    --gradient-accent: linear-gradient(45deg, hsl(25 50% 80%), hsl(30 40% 85%));
+    /* Soft colorful design system */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(285 85% 62%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%), hsl(220 14% 96%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 96%));
+    --gradient-accent: linear-gradient(45deg, hsl(262 83% 58%), hsl(220 70% 65%));
     
-    /* Subtle shadows */
-    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.05);
-    --shadow-hover: 0 8px 32px hsl(0 0% 0% / 0.1);
-    --shadow-subtle: 0 2px 8px hsl(0 0% 0% / 0.04);
+    /* Soft shadows */
+    --shadow-card: 0 4px 16px hsl(220 9% 46% / 0.08);
+    --shadow-hover: 0 8px 32px hsl(220 9% 46% / 0.12);
+    --shadow-subtle: 0 2px 8px hsl(220 9% 46% / 0.06);
+    --shadow-colored: 0 4px 20px hsl(262 83% 58% / 0.15);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
