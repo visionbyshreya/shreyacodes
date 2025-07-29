@@ -8,49 +8,46 @@
 
 @layer base {
   :root {
-    --background: 260 100% 2%;
-    --foreground: 260 5% 95%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
 
-    --card: 260 50% 8%;
-    --card-foreground: 260 5% 95%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 260 50% 8%;
-    --popover-foreground: 260 5% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 25 100% 60%;
-    --primary-foreground: 260 100% 2%;
-    --primary-glow: 35 100% 70%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 15 100% 55%;
-    --secondary-foreground: 260 100% 2%;
+    --secondary: 30 30% 85%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 260 30% 15%;
-    --muted-foreground: 260 5% 65%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 200 100% 60%;
-    --accent-foreground: 260 100% 2%;
+    --accent: 25 50% 80%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 260 30% 20%;
-    --input: 260 30% 15%;
-    --ring: 280 100% 70%;
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 0 0% 0%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
     
-    /* Gen Z Vibrant Design System */
-    --gradient-primary: linear-gradient(135deg, hsl(25 100% 60%), hsl(15 100% 55%));
-    --gradient-hero: linear-gradient(135deg, hsl(260 100% 2%), hsl(25 50% 8%), hsl(35 30% 12%));
-    --gradient-card: linear-gradient(145deg, hsl(260 50% 8% / 0.9), hsl(25 30% 12% / 0.7));
-    --gradient-neon: linear-gradient(45deg, hsl(25 100% 60%), hsl(200 100% 60%), hsl(15 100% 55%));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(25 100% 60% / 0.3), transparent 70%);
+    /* Minimalist Design System */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 20%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(30 30% 95%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 98%), hsl(30 20% 96%));
+    --gradient-accent: linear-gradient(45deg, hsl(25 50% 80%), hsl(30 40% 85%));
     
-    /* Neon shadows and effects */
-    --shadow-card: 0 8px 32px hsl(25 100% 60% / 0.1);
-    --shadow-glow: 0 0 40px hsl(25 100% 60% / 0.4);
-    --shadow-hover: 0 16px 64px hsl(25 100% 60% / 0.2);
-    --shadow-neon: 0 0 20px hsl(25 100% 60%), 0 0 40px hsl(25 100% 60%), 0 0 60px hsl(25 100% 60%);
+    /* Subtle shadows */
+    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.05);
+    --shadow-hover: 0 8px 32px hsl(0 0% 0% / 0.1);
+    --shadow-subtle: 0 2px 8px hsl(0 0% 0% / 0.04);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -139,36 +136,28 @@
   }
 }
 
-/* Custom utilities for Gen Z vibes */
+/* Custom utilities for minimalist design */
 @layer utilities {
   .text-gradient {
-    background: var(--gradient-neon);
+    background: var(--gradient-accent);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  .glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: var(--shadow-glow);
+  .elegant-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
   }
 
-  .neon-glow {
-    box-shadow: var(--shadow-neon);
-    animation: glow-pulse 2s ease-in-out infinite alternate;
+  .hover-lift {
+    transition: var(--transition-smooth);
   }
-
-  .floating-animation {
-    animation: floating 3s ease-in-out infinite;
-  }
-
-  .typing-animation {
-    overflow: hidden;
-    border-right: 2px solid hsl(var(--primary));
-    white-space: nowrap;
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
   }
 }
 
