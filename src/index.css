@@ -8,47 +8,49 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 9%;
+    --background: 45 100% 96%;
+    --foreground: 220 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card-foreground: 220 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover-foreground: 220 20% 20%;
 
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 25 100% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 9% 46%;
+    --secondary: 200 100% 65%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 45 80% 92%;
+    --muted-foreground: 220 15% 55%;
 
-    --accent: 220 14% 96%;
-    --accent-foreground: 220 9% 46%;
+    --accent: 280 100% 70%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 262 83% 58%;
+    --border: 45 50% 88%;
+    --input: 45 50% 90%;
+    --ring: 25 100% 60%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
     
-    /* Soft colorful design system */
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(285 85% 62%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%), hsl(220 14% 96%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 96%));
-    --gradient-accent: linear-gradient(45deg, hsl(262 83% 58%), hsl(220 70% 65%));
+    /* Modern vibrant design system with pastel yellow */
+    --gradient-primary: linear-gradient(135deg, hsl(25 100% 60%), hsl(35 100% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(45 100% 96%), hsl(50 80% 92%), hsl(200 70% 95%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(45 60% 95%));
+    --gradient-accent: linear-gradient(45deg, hsl(25 100% 60%), hsl(200 100% 65%));
+    --gradient-vibrant: linear-gradient(120deg, hsl(280 100% 70%), hsl(200 100% 65%), hsl(25 100% 60%));
     
-    /* Soft shadows */
-    --shadow-card: 0 4px 16px hsl(220 9% 46% / 0.08);
-    --shadow-hover: 0 8px 32px hsl(220 9% 46% / 0.12);
-    --shadow-subtle: 0 2px 8px hsl(220 9% 46% / 0.06);
-    --shadow-colored: 0 4px 20px hsl(262 83% 58% / 0.15);
+    /* Modern shadows with color */
+    --shadow-card: 0 8px 24px hsl(25 100% 60% / 0.08);
+    --shadow-hover: 0 16px 48px hsl(25 100% 60% / 0.15);
+    --shadow-subtle: 0 4px 12px hsl(45 50% 70% / 0.12);
+    --shadow-colored: 0 8px 32px hsl(25 100% 60% / 0.2);
+    --shadow-glow: 0 0 40px hsl(25 100% 60% / 0.3);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
