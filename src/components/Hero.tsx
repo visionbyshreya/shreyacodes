@@ -77,7 +77,7 @@ const Hero = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <span className="block text-foreground mb-2">Hello, I'm</span>
-                <span className="block text-gradient">Shreya Sharma</span>
+                <span className="block text-blue-600">Shreya Sharma</span>
               </motion.h1>
               
               <motion.p 
@@ -86,9 +86,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                <span className="font-semibold text-primary">Full-Stack Web Developer</span> | 
-                <span className="font-semibold text-accent"> UI/UX Designer</span> | 
-                <span className="font-semibold text-secondary"> SEO & Digital Marketing Specialist</span>
+                <span className="font-semibold text-black">Full-Stack Web Developer</span>
               </motion.p>
               
               <motion.div
@@ -176,23 +174,23 @@ const Hero = () => {
             >
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm font-semibold text-foreground">7+ Years Experience</span>
+                <span className="text-sm font-semibold text-foreground">Available for Projects</span>
               </div>
             </motion.div>
 
             {/* Main Profile Image */}
             <motion.div 
-              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-[2.5rem] overflow-hidden shadow-glow group"
-              whileHover={{ scale: 1.05, rotate: 2 }}
+              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden shadow-glow group"
+              whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-accent/10 to-secondary/20 rounded-[2.5rem] group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-accent/10 to-secondary/20 rounded-full group-hover:opacity-30 transition-opacity duration-500"></div>
               <img 
                 src={shreyaProfile} 
                 alt="Shreya Sharma - Full-Stack Developer" 
                 className="w-full h-full object-cover relative z-10 group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-[2.5rem]"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-full"></div>
             </motion.div>
 
             {/* Floating Skills Badge */}

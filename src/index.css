@@ -41,7 +41,7 @@
     
     /* Modern futuristic gradients with pastel yellow */
     --gradient-primary: linear-gradient(135deg, hsl(260 100% 65%), hsl(280 100% 75%));
-    --gradient-hero: linear-gradient(135deg, hsl(56 100% 95%), hsl(56 80% 88%), hsl(260 30% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 10% 95%), hsl(210 15% 90%), hsl(200 12% 93%));
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(56 40% 92%));
     --gradient-accent: linear-gradient(45deg, hsl(260 100% 65%), hsl(56 85% 75%));
     --gradient-vibrant: linear-gradient(120deg, hsl(280 100% 75%), hsl(260 100% 65%), hsl(56 85% 75%));
