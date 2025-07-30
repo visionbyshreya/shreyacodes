@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, ChevronDown, Sparkles, Code, Palette } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronDown, Sparkles, Code, Palette, Download, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import shreyaProfile from '@/assets/shreya-profile.jpg';
 
@@ -13,130 +13,141 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen relative bg-gradient-hero overflow-hidden">
-      {/* Floating Elements */}
+      {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
-          className="absolute top-20 left-10 w-4 h-4 bg-primary/20 rounded-full"
-          animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-20 left-[10%] w-20 h-20 bg-primary/10 rounded-full blur-xl"
+          animate={{ 
+            y: [0, -30, 0], 
+            x: [0, 20, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute top-40 right-20 w-6 h-6 bg-secondary/30 rounded-full"
-          animate={{ y: [0, 15, 0], x: [0, -15, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-1/3 right-[15%] w-32 h-32 bg-accent/15 rounded-full blur-2xl"
+          animate={{ 
+            y: [0, 25, 0], 
+            x: [0, -25, 0],
+            rotate: [0, 180, 360]
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
         <motion.div 
-          className="absolute bottom-40 left-20 w-3 h-3 bg-accent/25 rounded-full"
-          animate={{ y: [0, -25, 0], x: [0, 20, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-1/4 left-[20%] w-16 h-16 bg-secondary/20 rounded-full blur-lg"
+          animate={{ 
+            y: [0, -40, 0], 
+            x: [0, 30, 0],
+            opacity: [0.3, 0.8, 0.3]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 4 }}
         />
       </div>
 
-      <div className="container mx-auto px-4 h-screen flex items-center relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center w-full max-w-7xl mx-auto">
+      <div className="container mx-auto px-6 h-screen flex items-center relative z-10">
+        <div className="grid lg:grid-cols-2 gap-20 items-center w-full max-w-7xl mx-auto">
           {/* Left Content */}
           <motion.div 
-            className="space-y-8 lg:space-y-12"
-            initial={{ opacity: 0, x: -50 }}
+            className="space-y-10"
+            initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Badge */}
+            {/* Professional Badge */}
             <motion.div 
-              className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm border border-border rounded-full text-sm font-medium"
-              initial={{ opacity: 0, y: 20 }}
+              className="inline-flex items-center gap-3 px-6 py-3 glass-effect rounded-full text-sm font-medium backdrop-blur-lg"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
             >
-              <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-foreground">Available for new projects</span>
+              <Star className="h-5 w-5 text-primary" />
+              <span className="text-foreground font-semibold">Full-Stack Developer | Available for Projects</span>
             </motion.div>
 
             {/* Main Heading */}
             <motion.div 
-              className="space-y-6"
-              initial={{ opacity: 0, y: 20 }}
+              className="space-y-8"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
             >
               <motion.h1 
-                className="text-6xl md:text-7xl lg:text-8xl font-bold font-space-grotesk leading-tight"
-                whileHover={{ scale: 1.02 }}
+                className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+                whileHover={{ scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                <span className="block text-foreground">Hey! I Am</span>
-                <span className="block text-gradient">Shreya Dev</span>
+                <span className="block text-foreground mb-2">Hello, I'm</span>
+                <span className="block text-gradient">Shreya Sharma</span>
               </motion.h1>
               
               <motion.p 
-                className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-2xl"
+                className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
               >
-                Product designer and digital creative director working in design 
-                field for <span className="text-primary font-semibold">7 years</span> so far. 
-                Specialize user interface design.
+                <span className="font-semibold text-primary">Full-Stack Web Developer</span> | 
+                <span className="font-semibold text-accent"> UI/UX Designer</span> | 
+                <span className="font-semibold text-secondary"> SEO & Digital Marketing Specialist</span>
               </motion.p>
-            </motion.div>
-
-            {/* Services Cards */}
-            <motion.div 
-              className="grid grid-cols-2 gap-4 pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-            >
-              <motion.div 
-                className="bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-4 hover-lift"
-                whileHover={{ scale: 1.02 }}
+              
+              <motion.div
+                className="text-lg text-muted-foreground italic"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.8 }}
               >
-                <Code className="h-8 w-8 text-primary mb-2" />
-                <h3 className="font-semibold text-foreground">Development</h3>
-                <p className="text-sm text-muted-foreground">Modern web applications</p>
-              </motion.div>
-              <motion.div 
-                className="bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-4 hover-lift"
-                whileHover={{ scale: 1.02 }}
-              >
-                <Palette className="h-8 w-8 text-secondary mb-2" />
-                <h3 className="font-semibold text-foreground">UI/UX Design</h3>
-                <p className="text-sm text-muted-foreground">Beautiful user experiences</p>
+                "Good design is silent. Great design speaks — and I help it speak clearly."
               </motion.div>
             </motion.div>
 
-            {/* CTA Button */}
+            {/* Action Buttons */}
             <motion.div 
-              className="pt-8"
-              initial={{ opacity: 0, y: 20 }}
+              className="flex flex-col sm:flex-row gap-4 pt-6"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
             >
               <Button 
                 size="lg" 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 hover-lift font-semibold text-lg px-8 py-6 rounded-2xl shadow-glow"
+                className="bg-gradient-to-r from-primary to-accent text-white hover:scale-105 font-semibold text-lg px-8 py-4 rounded-2xl shadow-glow transition-all duration-300"
                 onClick={() => scrollToSection('portfolio')}
               >
-                Hire Me
+                <Sparkles className="w-5 h-5 mr-2" />
+                View My Work
+              </Button>
+              <Button 
+                variant="outline"
+                size="lg" 
+                className="font-semibold text-lg px-8 py-4 rounded-2xl hover:bg-primary hover:text-white transition-all duration-300"
+                onClick={() => scrollToSection('contact')}
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Download CV
               </Button>
             </motion.div>
 
             {/* Social Links */}
             <motion.div 
-              className="flex gap-4 pt-4"
+              className="flex gap-4 pt-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.5 }}
+              transition={{ delay: 1.4, duration: 0.8 }}
             >
               {[
                 { icon: Github, href: "#", label: "GitHub" },
                 { icon: Linkedin, href: "#", label: "LinkedIn" },
                 { icon: Mail, href: "#contact", label: "Email" }
               ].map(({ icon: Icon, href, label }) => (
-                <motion.div key={label} whileHover={{ y: -2 }}>
+                <motion.div 
+                  key={label} 
+                  whileHover={{ y: -3, scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
                   <Button
-                    variant="ghost"
+                    variant="outline"
                     size="icon"
-                    className="hover-lift transition-all duration-300 rounded-full"
+                    className="hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 rounded-full w-12 h-12"
                     asChild
                   >
                     <a href={href} aria-label={label}>
@@ -151,48 +162,64 @@ const Hero = () => {
           {/* Right Content - Profile Image */}
           <motion.div 
             className="relative flex justify-center lg:justify-end"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Floating Badge */}
+            {/* Floating Achievement Badge */}
             <motion.div 
-              className="absolute top-10 right-10 bg-card border border-border rounded-2xl p-4 shadow-hover z-20"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.8, type: "spring" }}
-              whileHover={{ scale: 1.05 }}
+              className="absolute -top-4 -right-4 glass-effect rounded-2xl p-4 shadow-glow z-20 backdrop-blur-lg"
+              initial={{ opacity: 0, scale: 0, rotate: -10 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ delay: 2, type: "spring", stiffness: 100 }}
+              whileHover={{ scale: 1.1, rotate: 5 }}
             >
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-foreground">Best Design Awards</span>
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                <span className="text-sm font-semibold text-foreground">7+ Years Experience</span>
               </div>
             </motion.div>
 
+            {/* Main Profile Image */}
             <motion.div 
-              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] rounded-[3rem] overflow-hidden elegant-card hover-lift shadow-glow"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-[2.5rem] overflow-hidden shadow-glow group"
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
-              <div className="absolute inset-0 bg-gradient-vibrant opacity-10 rounded-[3rem]"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-accent/10 to-secondary/20 rounded-[2.5rem] group-hover:opacity-30 transition-opacity duration-500"></div>
               <img 
                 src={shreyaProfile} 
-                alt="Shreya - Web Developer" 
-                className="w-full h-full object-cover relative z-10"
+                alt="Shreya Sharma - Full-Stack Developer" 
+                className="w-full h-full object-cover relative z-10 group-hover:scale-110 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-[2.5rem]"></div>
             </motion.div>
 
-            {/* Floating Stats */}
+            {/* Floating Skills Badge */}
             <motion.div 
-              className="absolute bottom-10 left-10 bg-card border border-border rounded-2xl p-4 shadow-hover z-20"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 2, type: "spring" }}
-              whileHover={{ scale: 1.05 }}
+              className="absolute -bottom-6 -left-6 glass-effect rounded-2xl p-4 shadow-glow z-20 backdrop-blur-lg"
+              initial={{ opacity: 0, scale: 0, rotate: 10 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ delay: 2.2, type: "spring", stiffness: 100 }}
+              whileHover={{ scale: 1.1, rotate: -5 }}
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">256.12k</div>
-                <div className="text-sm text-muted-foreground">Total Views</div>
+                <div className="text-2xl font-bold text-primary">100+</div>
+                <div className="text-xs text-muted-foreground font-medium">Projects Done</div>
+              </div>
+            </motion.div>
+
+            {/* Floating Tech Stack */}
+            <motion.div 
+              className="absolute top-1/2 -left-8 glass-effect rounded-xl p-3 shadow-glow z-20 backdrop-blur-lg"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 2.4, duration: 0.8 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="flex flex-col items-center gap-2">
+                <Code className="w-6 h-6 text-primary" />
+                <span className="text-xs font-medium text-foreground">React</span>
               </div>
             </motion.div>
           </motion.div>
@@ -202,21 +229,21 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <motion.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.5 }}
+        transition={{ delay: 2.8, duration: 0.8 }}
       >
         <Button
           variant="ghost"
           size="icon"
-          className="rounded-full hover-lift transition-all duration-300"
+          className="rounded-full hover:bg-primary/10 transition-all duration-300 w-12 h-12"
           onClick={() => scrollToSection('about')}
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ChevronDown className="h-6 w-6" />
+            <ChevronDown className="h-6 w-6 text-primary" />
           </motion.div>
         </Button>
       </motion.div>

@@ -33,21 +33,25 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           {/* Bio Content */}
           <div className="animate-slide-in-left">
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              <p className="text-lg leading-relaxed mb-6">
-                Hi, I'm <strong>Shreya Sharma</strong>, a passionate and driven full-stack web developer with a creative edge and a sharp technical mind. I specialize in designing and building modern, responsive websites and web applications that not only look great but also function flawlessly.
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed">
+                Hi, I'm <strong className="text-primary">Shreya Sharma</strong>, a passionate and driven full-stack web developer with a creative edge and a sharp technical mind. I specialize in designing and building modern, responsive websites and web applications that not only look great but also function flawlessly.
               </p>
               
-              <p className="text-lg leading-relaxed mb-6">
+              <p className="text-lg leading-relaxed">
                 My journey into tech began with a background in commerce, but my passion for building and problem-solving led me to the world of web development. I hold a diploma in Full Stack Web Development, and while my academic path may be unconventional, my knowledge and skill set in web development are precise, up-to-date, and fully aligned with the demands of today's fast-paced tech world.
               </p>
               
-              <p className="text-lg leading-relaxed mb-6">
+              <p className="text-lg leading-relaxed">
                 I have a deep understanding of both frontend and backend technologies — from crafting pixel-perfect UIs with HTML, CSS, JavaScript, React, and Angular, to building powerful backend systems using PHP, Python, Node.js, and more. My toolkit also includes experience in UI/UX design using Figma and Canva, database management (MySQL, MongoDB), and SEO/Digital Marketing strategies that boost client visibility and growth.
               </p>
               
               <p className="text-lg leading-relaxed">
-                I believe in continuous learning and self-improvement. I work hard to ensure that every project is better than the last and that there's no room for compromise when it comes to quality.
+                I'm passionate about creating tailored digital solutions that meet unique client goals. Whether it's a sleek business website, an engaging portfolio, or a robust e-commerce platform, I take pride in delivering high-quality, scalable work.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                When I'm not coding, you'll find me exploring design inspiration, upgrading my skills, or helping others elevate their online presence.
               </p>
             </div>
 
@@ -81,8 +85,9 @@ const About = () => {
             {/* Personal Quote */}
             <Card className="mt-6 p-6 bg-gradient-primary text-white shadow-glow">
               <blockquote className="text-lg italic text-center">
-                "I'm passionate about creating tailored digital solutions that meet unique client goals. Whether it's a sleek business website, an engaging portfolio, or a robust e-commerce platform, I take pride in delivering high-quality, scalable work."
+                "Good design is silent. Great design speaks — and I help it speak clearly."
               </blockquote>
+              <p className="text-center text-white/80 text-sm mt-2">- My Design Philosophy</p>
             </Card>
           </div>
         </div>
