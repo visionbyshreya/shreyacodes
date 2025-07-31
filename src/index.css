@@ -177,6 +177,29 @@
   }
 }
 
+/* Mobile-first responsive utilities */
+@layer utilities {
+  .mobile-container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+  }
+  
+  .mobile-text {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+  
+  .mobile-heading {
+    @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
+  }
+  
+  .mobile-spacing {
+    @apply py-8 sm:py-12 lg:py-16 xl:py-20;
+  }
+}
+
 @keyframes floating {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }

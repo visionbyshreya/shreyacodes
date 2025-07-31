@@ -19,18 +19,18 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-soft">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+    <section id="about" className="py-12 lg:py-20 bg-gradient-soft">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 lg:mb-16 animate-fade-in-up">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">
             About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
             Passionate developer with a creative edge and sharp technical mind
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-12 lg:mb-16">
           {/* Bio Content */}
           <div className="animate-slide-in-left">
             <div className="space-y-6">
@@ -70,7 +70,7 @@ const About = () => {
 
           {/* Stats Cards */}
           <div className="animate-slide-in-right">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {stats.map((stat, index) => (
                 <Card key={index} className="p-6 text-center bg-gradient-card shadow-card hover:shadow-hover transition-all duration-300 hover:scale-105">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-primary rounded-lg mb-4">

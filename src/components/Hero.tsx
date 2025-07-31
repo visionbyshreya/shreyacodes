@@ -44,11 +44,11 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 h-screen flex items-center relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center w-full max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 h-screen flex items-center relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center w-full max-w-7xl mx-auto">
           {/* Left Content */}
           <motion.div 
-            className="space-y-10"
+            className="space-y-6 lg:space-y-10 text-center lg:text-left"
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -66,13 +66,13 @@ const Hero = () => {
 
             {/* Main Heading */}
             <motion.div 
-              className="space-y-8"
+              className="space-y-4 lg:space-y-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
               <motion.h1 
-                className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -81,7 +81,7 @@ const Hero = () => {
               </motion.h1>
               
               <motion.p 
-                className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed"
+                className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed mx-auto lg:mx-0"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
@@ -90,7 +90,7 @@ const Hero = () => {
               </motion.p>
               
               <motion.div
-                className="text-lg text-muted-foreground italic"
+                className="text-base lg:text-lg text-muted-foreground italic px-4 lg:px-0"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.8 }}
@@ -101,7 +101,7 @@ const Hero = () => {
 
             {/* Action Buttons */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 pt-6"
+              className="flex flex-col sm:flex-row gap-4 pt-4 lg:pt-6 px-4 lg:px-0"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.8 }}
@@ -109,17 +109,17 @@ const Hero = () => {
               <Button 
                 variant="outline"
                 size="lg" 
-                className="font-semibold text-lg px-8 py-4 rounded-2xl hover:bg-primary hover:text-white transition-all duration-300"
+                className="font-semibold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-2xl hover:bg-primary hover:text-white transition-all duration-300 w-full sm:w-auto"
                 onClick={() => scrollToSection('contact')}
               >
-                <Download className="w-5 h-5 mr-2" />
+                <Download className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
                 Download CV
               </Button>
             </motion.div>
 
             {/* Social Links */}
             <motion.div 
-              className="flex gap-4 pt-6"
+              className="flex gap-3 lg:gap-4 pt-4 lg:pt-6 justify-center lg:justify-start"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.4, duration: 0.8 }}
@@ -137,11 +137,11 @@ const Hero = () => {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 rounded-full w-12 h-12"
+                    className="hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 rounded-full w-10 h-10 lg:w-12 lg:h-12"
                     asChild
                   >
                     <a href={href} aria-label={label}>
-                      <Icon className="h-5 w-5" />
+                      <Icon className="h-4 w-4 lg:h-5 lg:w-5" />
                     </a>
                   </Button>
                 </motion.div>
@@ -151,22 +151,22 @@ const Hero = () => {
 
           {/* Right Content - Profile Image */}
           <motion.div 
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-center lg:justify-end order-first lg:order-last mt-8 lg:mt-0"
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Floating Achievement Badge */}
             <motion.div 
-              className="absolute -top-4 -right-4 glass-effect rounded-2xl p-4 shadow-glow z-20 backdrop-blur-lg"
+              className="absolute -top-2 -right-2 lg:-top-4 lg:-right-4 glass-effect rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-glow z-20 backdrop-blur-lg"
               initial={{ opacity: 0, scale: 0, rotate: -10 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ delay: 2, type: "spring", stiffness: 100 }}
               whileHover={{ scale: 1.1, rotate: 5 }}
             >
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm font-semibold text-foreground">Available for Projects</span>
+              <div className="flex items-center gap-1 lg:gap-2">
+                <div className="w-2 h-2 lg:w-3 lg:h-3 bg-primary rounded-full animate-pulse"></div>
+                <span className="text-xs lg:text-sm font-semibold text-foreground">Available for Projects</span>
               </div>
             </motion.div>
 
@@ -188,14 +188,14 @@ const Hero = () => {
 
             {/* Floating Tech Stack */}
             <motion.div 
-              className="absolute top-1/2 -left-8 glass-effect rounded-xl p-3 shadow-glow z-20 backdrop-blur-lg"
+              className="absolute top-1/2 -left-4 lg:-left-8 glass-effect rounded-lg lg:rounded-xl p-2 lg:p-3 shadow-glow z-20 backdrop-blur-lg"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 2.4, duration: 0.8 }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="flex flex-col items-center gap-2">
-                <Code className="w-6 h-6 text-primary" />
+              <div className="flex flex-col items-center gap-1 lg:gap-2">
+                <Code className="w-4 h-4 lg:w-6 lg:h-6 text-primary" />
                 <span className="text-xs font-medium text-foreground">React</span>
               </div>
             </motion.div>

@@ -71,13 +71,13 @@ const Portfolio = () => {
   const categories = ["All", "Full-Stack", "Frontend", "CMS"];
 
   return (
-    <section id="portfolio" className="py-20 bg-gradient-hero">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+    <section id="portfolio" className="py-12 lg:py-20 bg-gradient-hero">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 lg:mb-16 animate-fade-in-up">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">
             My <span className="bg-gradient-primary bg-clip-text text-transparent">Portfolio</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
             Showcasing my latest work and creative solutions
           </p>
         </div>
@@ -108,7 +108,7 @@ const Portfolio = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <Card 
               key={project.id}

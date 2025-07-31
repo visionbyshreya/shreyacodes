@@ -108,18 +108,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-soft">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+    <section id="contact" className="py-12 lg:py-20 bg-gradient-soft">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 lg:mb-16 animate-fade-in-up">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">
             Contact <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
             Let's discuss your project and turn your ideas into reality
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="animate-slide-in-left">
             <h3 className="text-2xl font-semibold mb-8">Get In Touch</h3>
@@ -186,8 +186,8 @@ const Contact = () => {
             <Card className="p-8 bg-gradient-card shadow-card">
               <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="name">Name *</Label>
                     <Input
