@@ -30,7 +30,7 @@ const Skills = () => {
       title: "Databases",
       icon: Database,
       skills: ["MySQL", "MongoDB", "PostgreSQL", "Firebase"],
-      color: "from-purple-500 to-purple-600"
+      color: "from-blue-700 to-blue-800"
     },
     {
       title: "Design & UI/UX",
@@ -60,7 +60,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-background">
+    <section id="skills" className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">

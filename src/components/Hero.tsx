@@ -107,14 +107,6 @@ const Hero = () => {
               transition={{ delay: 1.2, duration: 0.8 }}
             >
               <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-primary to-accent text-white hover:scale-105 font-semibold text-lg px-8 py-4 rounded-2xl shadow-glow transition-all duration-300"
-                onClick={() => scrollToSection('portfolio')}
-              >
-                <Sparkles className="w-5 h-5 mr-2" />
-                View My Work
-              </Button>
-              <Button 
                 variant="outline"
                 size="lg" 
                 className="font-semibold text-lg px-8 py-4 rounded-2xl hover:bg-primary hover:text-white transition-all duration-300"
@@ -180,7 +172,7 @@ const Hero = () => {
 
             {/* Main Profile Image */}
             <motion.div 
-              className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden shadow-glow group"
+              className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden shadow-glow group"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
@@ -193,19 +185,6 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-full"></div>
             </motion.div>
 
-            {/* Floating Skills Badge */}
-            <motion.div 
-              className="absolute -bottom-6 -left-6 glass-effect rounded-2xl p-4 shadow-glow z-20 backdrop-blur-lg"
-              initial={{ opacity: 0, scale: 0, rotate: 10 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ delay: 2.2, type: "spring", stiffness: 100 }}
-              whileHover={{ scale: 1.1, rotate: -5 }}
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">100+</div>
-                <div className="text-xs text-muted-foreground font-medium">Projects Done</div>
-              </div>
-            </motion.div>
 
             {/* Floating Tech Stack */}
             <motion.div 

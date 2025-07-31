@@ -37,7 +37,7 @@ const Services = () => {
       title: "E-commerce Solutions",
       description: "User-friendly online stores with secure payment integration and inventory management.",
       features: ["Payment Gateway", "Inventory System", "User Accounts", "Admin Dashboard"],
-      gradient: "from-purple-500 to-purple-600"
+      gradient: "from-blue-700 to-blue-800"
     },
     {
       icon: Wrench,
@@ -83,7 +83,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-muted/30">
+    <section id="services" className="py-20 bg-gradient-soft">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">

@@ -71,7 +71,7 @@ const Portfolio = () => {
   const categories = ["All", "Full-Stack", "Frontend", "CMS"];
 
   return (
-    <section id="portfolio" className="py-20 bg-background">
+    <section id="portfolio" className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
