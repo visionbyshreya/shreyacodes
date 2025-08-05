@@ -78,7 +78,7 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               <Star className="h-5 w-5 text-primary" />
-              <span className="text-foreground font-semibold">Full-Stack Developer | Available for Projects</span>
+              <span className="text-foreground font-semibold">Full-Stack Developer | <span className="text-yellow-500">Available for Projects</span></span>
             </motion.div>
 
             {/* Main Heading */}
@@ -103,7 +103,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                <span className="font-semibold text-black">Full-Stack Web Developer</span>
+                <span className="font-semibold text-black">Full-Stack <span className="text-yellow-500">Web Developer</span></span>
               </motion.p>
               
               <motion.div
@@ -183,7 +183,7 @@ const Hero = () => {
             >
               <div className="flex items-center gap-1 lg:gap-2">
                 <div className="w-2 h-2 lg:w-3 lg:h-3 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-xs lg:text-sm font-semibold text-foreground">Available for Projects</span>
+                <span className="text-xs lg:text-sm font-semibold text-yellow-500">Available for Projects</span>
               </div>
             </motion.div>
 
@@ -205,7 +205,7 @@ const Hero = () => {
 
             {/* Floating Tech Stack with Reactions */}
             <motion.div 
-              className="absolute top-1/2 -left-4 lg:-left-8 glass-effect rounded-lg lg:rounded-xl p-2 lg:p-3 shadow-glow z-20 backdrop-blur-lg relative"
+              className="absolute top-1/2 -left-4 lg:-left-8 glass-effect rounded-lg p-1.5 lg:p-2 shadow-glow z-20 backdrop-blur-lg relative"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 2.4, duration: 0.8 }}
@@ -214,11 +214,12 @@ const Hero = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                className="flex flex-col items-center gap-1 lg:gap-2 p-1 h-auto hover:bg-transparent"
+                className="w-8 h-8 lg:w-10 lg:h-10 p-0 flex flex-col items-center justify-center hover:bg-transparent"
                 onClick={() => setShowReactions(!showReactions)}
               >
-                <Code className="w-4 h-4 lg:w-6 lg:h-6 text-primary" />
-                <span className="text-xs font-medium text-foreground">React {selectedReaction}</span>
+                <Code className="w-3 h-3 lg:w-4 lg:h-4 text-primary mb-0.5" />
+                <span className="text-[8px] lg:text-[10px] font-medium text-foreground leading-none">React</span>
+                {selectedReaction && <span className="text-[8px] lg:text-[10px]">{selectedReaction}</span>}
               </Button>
               
               {showReactions && (
