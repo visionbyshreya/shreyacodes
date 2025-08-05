@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail, ChevronDown, Sparkles, Code, Palette, Download, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import shreyaProfile from '@/assets/shreya-profile.jpg';
 
 const Hero = () => {
+  const [showReactions, setShowReactions] = useState(false);
+  const [selectedReaction, setSelectedReaction] = useState('');
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/Shreya_Sharma_CV.pdf';
+    link.download = 'Shreya_Sharma_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleReaction = (emoji: string) => {
+    setSelectedReaction(emoji);
+    setShowReactions(false);
+    // You can add logic here to save the reaction to a database
   };
 
   return (
@@ -110,7 +127,7 @@ const Hero = () => {
                 variant="outline"
                 size="lg" 
                 className="font-semibold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-2xl hover:bg-primary hover:text-white transition-all duration-300 w-full sm:w-auto"
-                onClick={() => scrollToSection('contact')}
+                onClick={downloadCV}
               >
                 <Download className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
                 Download CV
@@ -186,18 +203,44 @@ const Hero = () => {
             </motion.div>
 
 
-            {/* Floating Tech Stack */}
+            {/* Floating Tech Stack with Reactions */}
             <motion.div 
-              className="absolute top-1/2 -left-4 lg:-left-8 glass-effect rounded-lg lg:rounded-xl p-2 lg:p-3 shadow-glow z-20 backdrop-blur-lg"
+              className="absolute top-1/2 -left-4 lg:-left-8 glass-effect rounded-lg lg:rounded-xl p-2 lg:p-3 shadow-glow z-20 backdrop-blur-lg relative"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 2.4, duration: 0.8 }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="flex flex-col items-center gap-1 lg:gap-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="flex flex-col items-center gap-1 lg:gap-2 p-1 h-auto hover:bg-transparent"
+                onClick={() => setShowReactions(!showReactions)}
+              >
                 <Code className="w-4 h-4 lg:w-6 lg:h-6 text-primary" />
-                <span className="text-xs font-medium text-foreground">React</span>
-              </div>
+                <span className="text-xs font-medium text-foreground">React {selectedReaction}</span>
+              </Button>
+              
+              {showReactions && (
+                <motion.div 
+                  className="absolute -top-2 -right-20 bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg flex gap-1"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {['❤️', '👍', '🔥', '😍', '🚀', '💯'].map((emoji) => (
+                    <Button
+                      key={emoji}
+                      variant="ghost"
+                      size="sm"
+                      className="p-1 h-auto text-lg hover:scale-110 transition-transform"
+                      onClick={() => handleReaction(emoji)}
+                    >
+                      {emoji}
+                    </Button>
+                  ))}
+                </motion.div>
+              )}
             </motion.div>
           </motion.div>
         </div>
