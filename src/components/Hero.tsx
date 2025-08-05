@@ -205,7 +205,7 @@ const Hero = () => {
 
             {/* Floating Tech Stack with Reactions */}
             <motion.div 
-              className="absolute top-1/2 -left-4 lg:-left-8 glass-effect rounded-lg p-1.5 lg:p-2 shadow-glow z-20 backdrop-blur-lg relative"
+              className="absolute top-1/2 -left-4 lg:-left-6 glass-effect rounded p-1 shadow-glow z-20 backdrop-blur-lg relative"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 2.4, duration: 0.8 }}
@@ -214,12 +214,12 @@ const Hero = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                className="w-8 h-8 lg:w-10 lg:h-10 p-0 flex flex-col items-center justify-center hover:bg-transparent"
+                className="w-6 h-6 lg:w-8 lg:h-8 p-0 flex flex-col items-center justify-center hover:bg-transparent"
                 onClick={() => setShowReactions(!showReactions)}
               >
-                <Code className="w-3 h-3 lg:w-4 lg:h-4 text-primary mb-0.5" />
-                <span className="text-[8px] lg:text-[10px] font-medium text-foreground leading-none">React</span>
-                {selectedReaction && <span className="text-[8px] lg:text-[10px]">{selectedReaction}</span>}
+                <Code className="w-2.5 h-2.5 lg:w-3 lg:h-3 text-primary mb-0.5" />
+                <span className="text-[6px] lg:text-[8px] font-medium text-foreground leading-none">React</span>
+                {selectedReaction && <span className="text-[6px] lg:text-[8px]">{selectedReaction}</span>}
               </Button>
               
               {showReactions && (
